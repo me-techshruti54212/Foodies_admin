@@ -25,7 +25,7 @@ const ListFoodTable = ({ listitem, url }) => {
           className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
         >
           <img
-            src={`${url}/images/${listitem.image}`}
+            src={`${url}images/${listitem.image}`}
             className="w-[50px] h-[50px] rounded-[10px]"
             alt="image"
           />
