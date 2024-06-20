@@ -18,12 +18,12 @@ const AddItems = ({ url }) => {
     formAddData.append("price", Number(price));
     formAddData.append("category", category);
     formAddData.append("image", image);
-    const response = await axios.post(`${url}/api/food/add`, formAddData);
-    // console.log(formAddData);
+    const response = await axios.post(`${url}api/food/add`, formAddData);
+    console.log(formAddData);
     const success_msg = await response.data.success;
     // setName("");
     if (success_msg) {
-      toast.success("Food Added");
+      toast.success("Food Added") ;
       setImage(false);
 
       setName("");

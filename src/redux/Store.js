@@ -7,6 +7,10 @@ const Store = configureStore({
     list: ListItemsSlice,
     orders:OrdersListSlice,
   },
+  middleware:(getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 export default Store;
