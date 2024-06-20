@@ -5,9 +5,12 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { fetchList } from "../redux/slices/ListItemsSlice";
 const ListFoodTable = ({ listitem, url }) => {
+
+
+
   const dispatch = useDispatch();
   const deleteItem = async (foodId) => {
-    const response = await axios.post(`${url}/api/food/removefood`, {
+    const response = await axios.post(`${url}api/food/removefood`, {
       id: foodId,
     });
     await dispatch(fetchList(url));
@@ -17,6 +20,7 @@ const ListFoodTable = ({ listitem, url }) => {
       toast.error("Some error occured");
     }
   };
+ 
   return (
     <tbody>
       <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -24,11 +28,13 @@ const ListFoodTable = ({ listitem, url }) => {
           scope="row"
           className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
         >
+        
           <img
-            src={`${url}images/${listitem.image}`}
-            className="w-[50px] h-[50px] rounded-[10px]"
-            alt="image"
-          />
+            src={`${url}images/${listitem.image}`}  className="w-[50px] h-[50px] rounded-[10px]"
+            alt="image"/>
+            {/* <img src={`data:${listitem.image?.contentType};base64,${imgbase64}`} className="w-[50px] h-[50px] rounded-[10px]"
+            alt="image"/> */}
+           
         </th>
         <td className="px-6 py-4">{listitem.name}</td>
         <td className="px-6 py-4">{listitem.category}</td>
