@@ -25,7 +25,7 @@ const DisplayAnOrder = ({order,url}) => {
                 {order?.items?.map((item) => `${item.name} X ${item.qty} , `)}
                 </th>
                 <td className="px-6 py-4">
-                    {order.address.firstName}&nbsp;{order.address.lastName}
+                    {order.address?.firstName}&nbsp;{order.address?.lastName}
                 </td>
                 <td className="px-6 py-4">
                 ₹{order.amount}

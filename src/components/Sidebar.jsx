@@ -5,8 +5,9 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import { AiOutlineDeliveredProcedure } from "react-icons/ai";
 const Sidebar = () => {
   return (
-    <div className="sm:w-[20%] sm:border-r-2 sm:h-[100%]  border-brand-dark absolute w-full">
-      <div className="flex sm:flex-col sm:justify-around justify-between sm:mt-12  text-sm sm:text-lg sm:gap-7 border-b-2 border-brand-dark">
+   
+    <div className="sm:w-[20%] sm:border-r-2 sm:h-[85%]  border-brand-dark absolute w-full">
+      <div className="flex sm:flex-col sm:justify-around justify-between sm:mt-12  text-sm sm:text-lg sm:gap-7 ">
         <NavLink to="/add">
           <div className="border border-green-300 flex items-center gap-1 sm:gap-3 hover:bg-green-500 hover:text-white cursor-pointer sm:ml-2 sm:p-1">
             <AiOutlinePlusCircle size={32} className="hidden  sm:block" />
@@ -30,7 +31,10 @@ const Sidebar = () => {
         </NavLink>
       </div>
     </div>
+  
+  
   );
 };
 
 export default Sidebar;
+
