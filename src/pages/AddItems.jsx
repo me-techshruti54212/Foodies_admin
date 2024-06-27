@@ -9,7 +9,6 @@ const AddItems = ({ url }) => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("Breakfast");
-
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     const formAddData = new FormData();
@@ -19,15 +18,13 @@ const AddItems = ({ url }) => {
     formAddData.append("category", category);
     formAddData.append("image", image);
     const response = await axios.post(`${url}api/food/add`, formAddData);
-    console.log(formAddData);
     const success_msg = await response.data.success;
-    // setName("");
     if (success_msg) {
-      toast.success("Food Added") ;
-      setImage(false);
-
+      console.log("anvs");
       setName("");
       setDescription("");
+      toast.success("Food Added");
+      setImage(false);
       setCategory("Breakfast");
 
       setPrice("");
@@ -67,6 +64,7 @@ const AddItems = ({ url }) => {
               name="name"
               className="sm:w-[45%]  border border-green-400 rounded sm:p-2 p-1 text-sm outline-green-500"
               onChange={(e) => setName(e.target.value)}
+              value={name}
             />
           </div>
           <div className="flex flex-col  sm:items-center sm:justify-between sm:flex-row">
@@ -78,6 +76,7 @@ const AddItems = ({ url }) => {
               placeholder="Write about your product here"
               className="sm:w-[45%] border border-green-400 rounded  p-1 sm:p-2 text-sm outline-green-500 resize-none"
               onChange={(e) => setDescription(e.target.value)}
+              value={description}
             />
           </div>
           <div className="flex flex-col  sm:items-center sm:justify-between sm:flex-row">
@@ -86,6 +85,7 @@ const AddItems = ({ url }) => {
               name="category"
               className="sm:w-[45%] border border-green-400 rounded sm:p-2 text-sm font-normal p-1 outline-green-500 "
               onChange={(e) => setCategory(e.target.value)}
+              value={category}
             >
               <option value="Breakfast">BreakFast</option>
               <option value="Lunch">Lunch</option>
